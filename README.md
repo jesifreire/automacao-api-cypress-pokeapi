@@ -14,22 +14,6 @@ Este projeto tem como objetivo demonstrar testes automatizados de API utilizando
 
 ## 📁 Estrutura do projeto
 
-cypress-api-pokemon/
-├── cypress/
-│ ├── e2e/ # Arquivos de teste
-│ │ ├── pokeapi.spec.cy.js
-│ │ └── listpoke.spec.cy.js
-│ ├── fixtures/ # Dados simulados (futuramente)
-│ │ └── example.json
-│ └── support/ # Comandos reutilizáveis
-│ ├── commands.js
-│ └── e2e.js
-├── cypress.config.js # Configurações do Cypress
-├── package.json
-├── .gitignore
-└── README.md
-
-
 ---
 
 ## 🚀 Como executar os testes
@@ -55,7 +39,7 @@ npx cypress run
 ✅ Teste negativo com Pokémon inexistente (pikachu999)
 
 🔹 listpoke.spec.cy.js
-✅ Validação em lote para múltiplos Pokémons (pikachu, charmander, bulbasaur, squirtle)
+✅ Validação para múltiplos Pokémons (pikachu, charmander, bulbasaur, squirtle)
 
 ✅ Verificação de status, nome, ID e tipo no corpo da resposta
 
@@ -68,9 +52,10 @@ npx cypress run
 
 📦 Integração com CI (GitHub Actions)
 
-👩‍💻 Desenvolvido por
-Jesiane Freire
-📫 LinkedIn • 💼 GitHub
+## 👤 Autor
+👩‍💻 Desenvolvido por Jesiane Freire
+📫 LinkedIn (https://www.linkedin.com/in/jesiane-freire/)
+• 💼 GitHub (https://github.com/jesifreire)
 
 📄 Licença
 Este projeto é livre para fins de estudo, aprimoramento e contribuição.

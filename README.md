@@ -47,7 +47,7 @@ npx cypress run
 🔗 Testes em outros endpoints da API, como /type e /ability
 
 📦 Integração com CI (GitHub Actions)
-
+```
 ## 👤 Autor
 👩‍💻 Desenvolvido por Jesiane Freire
 📫 Como me encontrar:

@@ -1,56 +1,117 @@
-# 🧪 Cypress API - Testes Automatizados com a PokeAPI
+# 🧪 Cypress API + K6 Performance Tests - PokeAPI
 
-Este projeto tem como objetivo demonstrar testes automatizados de API utilizando o [Cypress](https://www.cypress.io/) com JavaScript. Os testes foram realizados sobre a [PokeAPI](https://pokeapi.co/), uma API pública com informações sobre Pokémons.
+Testes automatizados de API utilizando **Cypress** para testes funcionais e **K6** para testes de performance com a [PokeAPI](https://pokeapi.co/).
 
 ---
 
-## 📚 Tecnologias utilizadas
+## 📚 Tecnologias
 
 - [Node.js](https://nodejs.org/)
-- [Cypress](https://www.cypress.io/)
+- [Cypress](https://www.cypress.io/) - Testes funcionais
+- [K6](https://k6.io/) - Testes de performance
 - JavaScript
 
 ---
 
-## 🚀 Como executar os testes
+## 🚀 Como Executar
 
-### 1. Clone o repositório
+### Instalação
 
 ```bash
 git clone https://github.com/jesifreire/cypress-api-pokeapi.git
-cd cypress-api-pokemon
-
-2. Instale as dependências
+cd cypress-api-pokeapi
 npm install
-3. Execute os testes
-Abrir o Cypress com interface gráfica
-npx cypress open
-Rodar todos os testes via terminal
-npx cypress run
-
-✅ Testes implementados
-🔹 pokeapi.spec.cy.js
-✅ Consulta do Pokémon Ditto
-
-✅ Teste negativo com Pokémon inexistente (pikachu999)
-
-🔹 listpoke.spec.cy.js
-✅ Validação para múltiplos Pokémons (pikachu, charmander, bulbasaur, squirtle)
-
-✅ Verificação de status, nome, ID e tipo no corpo da resposta
-
-💡 Futuras melhorias
-🔄 Uso de arquivos de fixture para popular os testes dinamicamente
-
-📄 Geração de relatórios de testes
-
-🔗 Testes em outros endpoints da API, como /type e /ability
-
-📦 Integração com CI (GitHub Actions)
 ```
+
+### K6 (macOS/Linux/Windows)
+
+```bash
+# macOS
+brew install k6
+
+# Linux
+sudo apt-get install k6
+
+# Windows
+choco install k6
+```
+
+### Cypress
+
+```bash
+# Interface gráfica
+npx cypress open
+
+# Modo headless
+npx cypress run
+```
+
+### K6 Performance Tests
+
+```bash
+# Execução padrão
+k6 run test/k6/pokeapi.test.js
+
+# Com variáveis de ambiente
+k6 run test/k6/pokeapi.test.js --env POKEMON_NAME=charmander
+
+# Com relatório detalhado
+k6 run test/k6/pokeapi.test.js -v
+```
+
+---
+
+## 📋 Estrutura do Projeto
+
+```
+automacao-api-cypress-pokeapi/
+├── cypress/
+│   ├── e2e/
+│   │   ├── pokeapi.spec.cy.js
+│   │   └── listpoke.spec.cy.js
+│   ├── fixtures/
+│   └── support/
+├── test/k6/
+│   ├── pokeapi.test.js          # Testes de performance
+│   ├── helpers/pokemonHelper.js # Funções reutilizáveis
+│   ├── data/pokemons.csv        # Dados para testes
+│   └── results/                 # Relatórios gerados
+├── package.json
+├── cypress.config.js
+└── README.md
+```
+
+---
+
+## ✅ Conceitos Implementados (K6)
+
+1. **Thresholds** - Critérios de sucesso/falha
+2. **Checks** - Validações estruturadas
+3. **Helpers** - Funções reutilizáveis
+4. **Trends** - Métricas de tendência
+5. **Faker** - Dados aleatórios
+6. **Variáveis de Ambiente** - Configurações dinâmicas
+7. **Stages** - Fases de carga (ramp-up, soak, ramp-down)
+8. **Reaproveitamento de Resposta** - Extração de dados
+9. **Token de Autenticação** - Suporte preparado
+10. **Data-Driven Testing** - Múltiplos conjuntos de dados
+11. **Groups** - Agrupamento de operações
+
+---
+
+## 💡 Futuras Melhorias
+
+- 🔄 CI/CD (GitHub Actions)
+- 📊 Dashboard em tempo real (Grafana)
+- 🔐 Testes com autenticação real
+- 📄 Relatórios HTML automáticos
+
+---
+
 ## 👤 Autor
-👩‍💻 Desenvolvido por Jesiane Freire
-📫 Como me encontrar:
-- [LinkedIn](https://www.linkedin.com/in/jesiane-freire/) - Meu LinkedIn
-📄 Licença
-Este projeto é livre para fins de estudo, aprimoramento e contribuição.
+
+👩‍💻 Jesiane Freire | [LinkedIn](https://www.linkedin.com/in/jesiane-freire/)
+
+## 📄 Licença
+
+Livre para fins de estudo e contribuição.
